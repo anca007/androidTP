@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/whiteFragment">
+
+    <fragment
+        android:id="@+id/cornFlowerBlueFragment"
+        android:name="com.example.mod5tp1.CornFlowerBlueFragment"
+        android:label="fragment_corn_flower_blue"
+        tools:layout="@layout/fragment_corn_flower_blue" />
+    <fragment
+        android:id="@+id/greenFragment"
+        android:name="com.example.mod5tp1.GreenFragment"
+        android:label="fragment_green"
+        tools:layout="@layout/fragment_green" />
+    <fragment
+        android:id="@+id/redFragment"
+        android:name="com.example.mod5tp1.RedFragment"
+        android:label="fragment_red"
+        tools:layout="@layout/fragment_red" >
+        <action
+            android:id="@+id/actionRedToBlue"
+            app:destination="@id/cornFlowerBlueFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whiteFragment"
+        android:name="com.example.mod5tp1.WhiteFragment"
+        android:label="fragment_white"
+        tools:layout="@layout/fragment_white" >
+        <action
+            android:id="@+id/actionWhiteToRed"
+            app:destination="@id/redFragment" />
+        <action
+            android:id="@+id/actionWhiteToGreen"
+            app:destination="@id/greenFragment" />
+    </fragment>
+</navigation>

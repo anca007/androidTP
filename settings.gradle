@@ -16,3 +16,6 @@ rootProject.name = "TPAndroid"
 include ':app'
 include ':mod3TP'
 include ':mod4tp1'
+include ':mod4tp2'
+include ':mod5tp1'
+include ':mod5tp2'
