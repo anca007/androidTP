@@ -1,10 +1,11 @@
 package com.example.mod8tp1
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class DiceViewModel : ViewModel() {
 
-    var totalLaunch = 0
+    var totalLaunch = MutableLiveData(0)
     var totalLeft = 0
     var totalRight = 0
     var nbLaunchLeft = 0
@@ -13,7 +14,7 @@ class DiceViewModel : ViewModel() {
     var dice = 1
 
     private fun launchDice() : Int{
-        totalLaunch++
+        totalLaunch.value = totalLaunch.value?.inc()
         dice = (1..6).random()
 
         imageId = when(dice){

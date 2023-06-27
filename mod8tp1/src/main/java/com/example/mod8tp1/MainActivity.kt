@@ -19,14 +19,18 @@ class MainActivity : AppCompatActivity() {
 
         binding.vm = vm
 
+        vm.totalLaunch.observe(this){
+            binding.vm = vm
+        }
+
         binding.buttonLeft.setOnClickListener {
             vm.launchLeft()
-            binding.vm = vm
+            //binding.vm = vm
         }
 
         binding.buttonRight.setOnClickListener {
             vm.launchRight()
-            binding.vm = vm
+            //binding.vm = vm
         }
 
     }
