@@ -45,8 +45,9 @@ class DetailPokemonFragment : Fragment() {
         }
 
         binding.button.setOnClickListener {
+            pokemon.id = 0
             vm.addPokemon(pokemon).observe(this){
-                Snackbar.make(view, pokemon.name + " saved !", Toast.LENGTH_LONG).show()
+                Snackbar.make(view, pokemon.name + " saved !", Snackbar.LENGTH_LONG).show()
             }
 
         }

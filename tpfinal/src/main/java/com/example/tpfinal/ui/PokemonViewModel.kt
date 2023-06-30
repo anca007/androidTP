@@ -31,10 +31,10 @@ class PokemonViewModel(private val pokemonDAO: PokemonDAO) : ViewModel() {
         return pokemon
     }
 
-    fun addPokemon(pokemon: Pokemon): MutableLiveData<Pokemon> {
-        var id = MutableLiveData<Pokemon>()
+    fun addPokemon(pokemon: Pokemon): MutableLiveData<Long> {
+        var id = MutableLiveData<Long>()
         viewModelScope.launch {
-            pokemonDAO.insert(pokemon)
+            id.value = pokemonDAO.insert(pokemon)
         }
         return id
     }
